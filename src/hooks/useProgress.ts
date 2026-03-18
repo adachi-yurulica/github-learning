@@ -30,11 +30,13 @@ function saveProgress(progress: Progress): void {
   }
 }
 
+/** バッジ獲得条件を計算する（Chapter は 1〜5 の計5つ） */
 function computeBadges(progress: Progress): string[] {
   const badges: string[] = []
   for (const badge of BADGES) {
     if (badge.requiredChapter === 'all') {
-      if (progress.completedChapters.length >= 4) {
+      // 全5チャプター完了でバッジ獲得
+      if (progress.completedChapters.length >= 5) {
         badges.push(badge.id)
       }
     } else {
@@ -89,8 +91,9 @@ export function useProgress() {
     [progress.completedExercises]
   )
 
+  // 全 5 チャプターに対する進捗率
   const totalProgress = Math.round(
-    (progress.completedChapters.length / 4) * 100
+    (progress.completedChapters.length / 5) * 100
   )
 
   return {

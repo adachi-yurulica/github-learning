@@ -47,7 +47,16 @@ export function Sidebar({ completedChapters, open, onClose }: SidebarProps) {
               }`}
             >
               <span>{chapter.emoji}</span>
-              <span className="flex-1">Chapter {chapter.id}: {chapter.title}</span>
+              <div className="flex-1 min-w-0">
+                <div className="truncate">Chapter {chapter.id}: {chapter.title}</div>
+                {/* 対象者バッジ（Chapter 4/5 のみ） */}
+                {chapter.id === 4 && (
+                  <span className="text-xs text-blue-400">👤 全員向け</span>
+                )}
+                {chapter.id === 5 && (
+                  <span className="text-xs text-pink-400">🤖 エンジニア向け</span>
+                )}
+              </div>
               {isDone ? (
                 <CheckCircle size={14} className="text-github-accent flex-shrink-0" />
               ) : (

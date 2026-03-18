@@ -46,7 +46,7 @@ export function Home() {
 
           {hasProgress && (
             <Link
-              to={`/chapter/${Math.min(4, Math.floor(totalProgress / 25) + 1)}`}
+              to={`/chapter/${Math.min(5, Math.floor(totalProgress / 20) + 1)}`}
               className="inline-flex items-center gap-2 bg-github-surface hover:bg-github-border text-github-text font-semibold px-6 py-3 rounded-lg border border-github-border transition-colors"
             >
               続きから学ぶ
@@ -90,6 +90,17 @@ export function Home() {
                     <h3 className="font-semibold text-github-text">
                       Chapter {chapter.id}: {chapter.title}
                     </h3>
+                    {/* 対象者バッジ（Chapter 4/5 のみ） */}
+                    {chapter.id === 4 && (
+                      <span className="inline-block mt-1 text-xs px-2 py-0.5 rounded-full bg-blue-500/10 border border-blue-500/30 text-blue-300">
+                        👤 全員向け
+                      </span>
+                    )}
+                    {chapter.id === 5 && (
+                      <span className="inline-block mt-1 text-xs px-2 py-0.5 rounded-full bg-pink-500/10 border border-pink-500/30 text-pink-300">
+                        🤖 エンジニア向け
+                      </span>
+                    )}
                     <p className="text-sm text-github-muted mt-0.5">
                       {chapter.description}
                     </p>

@@ -24,10 +24,17 @@ export const CHAPTERS: ChapterInfo[] = [
   },
   {
     id: 4,
-    title: 'ハンズオン',
-    emoji: '🚀',
-    description: 'ターミナルシミュレーターで実際に手を動かそう',
+    title: 'ハンズオン（全員向け）',
+    emoji: '👤',
+    description: 'GitHub Web UIだけで完結！ブラウザでIssue・PR・ファイル編集を体験',
     path: '/chapter/4',
+  },
+  {
+    id: 5,
+    title: 'ハンズオン（エンジニア向け）',
+    emoji: '🤖',
+    description: 'Claude Code × GitHub — AIと一緒にclone・branch・commit・pushを実践',
+    path: '/chapter/5',
   },
 ]
 
@@ -55,10 +62,17 @@ export const BADGES: Badge[] = [
   },
   {
     id: 'handson-complete',
-    emoji: '🚀',
-    name: 'ハンズオン完走',
-    description: 'Chapter 4 完了',
+    emoji: '👤',
+    name: 'Web UIマスター',
+    description: 'Chapter 4 完了（全員向けハンズオン）',
     requiredChapter: 4,
+  },
+  {
+    id: 'engineer-complete',
+    emoji: '🤖',
+    name: 'Claude Code使い',
+    description: 'Chapter 5 完了（エンジニア向けハンズオン）',
+    requiredChapter: 5,
   },
   {
     id: 'github-graduate',
